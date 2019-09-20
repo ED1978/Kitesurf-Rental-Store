@@ -8,9 +8,9 @@ class Customer
   end
 
   def save()
-    sql = 'INSERT INTO customers (name)
+    sql = "INSERT INTO customers (name)
     VALUES ($1)
-    RETURNING id'
+    RETURNING id"
     values = [@name]
     results = SqlRunner.run(sql,values)
     @id = results.first()['id'].to_i()
