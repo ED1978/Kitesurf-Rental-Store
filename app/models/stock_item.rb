@@ -1,3 +1,6 @@
+require_relative('../db/sql_runner.rb')
+
+
 class StockItem
 
   attr_reader :id, :name, :category, :size
