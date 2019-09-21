@@ -75,6 +75,13 @@ stock8 = StockItem.new({
   })
 stock8.save()
 
+stock9 = StockItem.new({
+  "name" => "Core Team Bar",
+  "category" => "Bar",
+  "size" => "55cm"
+  })
+stock9.save()
+
 rental1 = Rental.new({
   "customer_id" => customer1.id,
   "stock_item_id" => stock1.id
