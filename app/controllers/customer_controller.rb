@@ -24,6 +24,12 @@ get '/customers/:id/edit' do
   erb(:"customers/edit")
 end
 
+post 'customers/:id' do
+  Customer.new(params).update
+  erb(:"customers/update_success")
+end
+
+
 post '/customers/:id' do
   Customer.new(params.update)
 end
