@@ -37,11 +37,11 @@ class StockItem
     return stock_items.map {|stock_item| StockItem.new(stock_item)}
   end
 
-  # def self.find(id)
-  #   sql = "SELECT * FROM stock_items WHERE id = $1"
-  #   values = [id]
-  #   item = SqlRunner.run(sql,values)
-  #   return StockItem.new(item.first)
-  #
-  # end
+  def self.find(id)
+    sql = "SELECT * FROM stock_items WHERE id = $1"
+    values = [id]
+    item = SqlRunner.run(sql,values)
+    return StockItem.new(item.first)
+
+  end
 end

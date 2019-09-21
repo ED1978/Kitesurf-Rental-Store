@@ -1,10 +1,7 @@
 <a href="/stock_items/new">Add Stock</a>
 
-<% for stock_item in @stock_items %>
-<h5>Name: <%=stock_item.name()%></h5>
-<p>Category: <%=stock_item.category()%></p>
-<p>Size: <%=stock_item.size()%></p>
-<form method="post" action="/stock_items/delete">
-  <input type="submit" value="Delete Item"/>
-</form>
+<% @stock_items.each do |item| %>
+  <p>Name: <%= item.name() %></p>
+  <p><a href="/stock_items/<%= item.id %>">Show details</a></p>
+  <hr />
 <% end %>

@@ -9,9 +9,10 @@ get '/stock_items' do
   erb(:"stock_items/index")
 end
 
-# get '/stock_items/:id' do # show
-#   @item = StockItem.find( params[:id] )
-# end
+get '/stock_items/:id' do
+  @stock_item = StockItem.find( params[:id] )
+  erb(:"stock_items/show")
+end
 
 get '/stock_items/new' do
   erb(:"stock_items/new")
@@ -23,7 +24,7 @@ post '/stock_items' do
   erb(:"stock_items/success")
 end
 
-# post '/stock_items/delete' do
-#   StockItem.delete()
-#   erb(:"stock_items/delete_success")
-# end
+post '/stock_items/delete' do
+  StockItem.delete()
+  erb(:"stock_items/delete_success")
+end
