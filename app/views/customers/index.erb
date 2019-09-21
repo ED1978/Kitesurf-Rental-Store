@@ -5,5 +5,8 @@
 <form method="get" action="/customers/<%= customer.id %>/edit">
   <input type="submit" value="Update Details"/>
 </form>
+<form method="post" action="/customers/<%= customer.id %>/edit">
+  <input type="submit" value="Delete Customer"/>
+</form>
   <hr />
 <% end %>
