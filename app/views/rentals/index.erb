@@ -1,9 +1,9 @@
 <a href="/rentals/new">New Rental</a>
 
-<% for rental in @rentals%>
+<% @rentals.each do |rental| %>
 <p>Rental Number: <%= rental.id() %></p>
 <p>Customer: <%= rental.customer.name() %></p>
-<p>Equipment: <%= rental.stock_item.name() %></p>
+<p>Equipment: <%= rental.stock_item.name() %> <%= rental.stock_item.size %></p>
 
   <hr />
 <% end %>

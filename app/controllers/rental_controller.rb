@@ -8,3 +8,7 @@ get '/rentals' do
   @rentals = Rental.all
   erb(:"rentals/index")
 end
+
+get '/rentals/new' do
+  erb(:"rentals/new")
+end
