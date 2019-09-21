@@ -20,11 +20,11 @@ class StockItem
     @id = results.first['id'].to_i()
   end
 
-  # def self.delete()
-  #   sql = "DELETE FROM stock_items WHERE id = $1"
-  #   values = [@id]
-  #   SqlRunner.run(sql, values)
-  # end
+  def delete()
+    sql = "DELETE FROM stock_items WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
   def self.delete_all()
     sql = "DELETE FROM stock_items"
@@ -41,7 +41,7 @@ class StockItem
     sql = "SELECT * FROM stock_items WHERE id = $1"
     values = [id]
     item = SqlRunner.run(sql,values)
-    return StockItem.new(item.first)
-
+    result =  StockItem.new(item.first)
+    return result
   end
 end

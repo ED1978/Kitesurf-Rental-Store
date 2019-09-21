@@ -82,28 +82,28 @@ stock9 = StockItem.new({
   })
 stock9.save()
 
-rental1 = Rental.new({
-  "customer_id" => customer1.id,
-  "stock_item_id" => stock1.id
-  })
-rental1.save()
-
-rental2 = Rental.new({
-    "customer_id" => customer1.id,
-    "stock_item_id" => stock4.id
-    })
-rental2.save()
-
-
-rental3 = Rental.new({
-      "customer_id" => customer1.id,
-      "stock_item_id" => stock8.id
-      })
-rental3.save()
-
-
-rental4 = Rental.new({
-        "customer_id" => customer4.id,
-        "stock_item_id" => stock7.id
-        })
-rental4.save()
+# rental1 = Rental.new({
+#   "customer_id" => customer1.id,
+#   "stock_item_id" => stock1.id
+#   })
+# rental1.save()
+#
+# rental2 = Rental.new({
+#     "customer_id" => customer1.id,
+#     "stock_item_id" => stock4.id
+#     })
+# rental2.save()
+#
+#
+# rental3 = Rental.new({
+#       "customer_id" => customer1.id,
+#       "stock_item_id" => stock8.id
+#       })
+# rental3.save()
+#
+#
+# rental4 = Rental.new({
+#         "customer_id" => customer4.id,
+#         "stock_item_id" => stock7.id
+#         })
+# rental4.save()

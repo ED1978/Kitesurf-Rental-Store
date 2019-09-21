@@ -1,7 +1,11 @@
 <a href="/stock_items/new">Add Stock</a>
 
 <% @stock_items.each do |item| %>
-  <p>Name: <%= item.name() %></p>
-  <p><a href="/stock_items/<%= item.id %>">Show details</a></p>
+<p>Name: <%= item.name() %></p>
+<p>Category: <%= item.category() %></p>
+<p>Size: <%= item.size() %></p>
+<form method="post" action="/stock_items/<%= item.id %>/delete">
+  <input type="submit" value="Delete item"/>
+</form>
   <hr />
 <% end %>
