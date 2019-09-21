@@ -4,6 +4,6 @@ require_relative('controllers/customer_controller.rb')
 require_relative('controllers/stock_item_controller.rb')
 require_relative('controllers/rental_controller.rb')
 
-get '/' do
-  erb(:index)
+get '/home' do
+  erb(:home)
 end

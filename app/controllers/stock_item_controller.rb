@@ -15,5 +15,5 @@ end
 post '/stock_items' do
   stock_item = StockItem.new(params)
   stock_item.save()
-  redirect to '/stock_items'
+  erb(:"stock_items/success")
 end
