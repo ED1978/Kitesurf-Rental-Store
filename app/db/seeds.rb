@@ -2,6 +2,9 @@ require_relative("../models/customer.rb")
 require_relative("../models/stock_item.rb")
 require_relative("../models/rental.rb")
 
+Rental.delete_all()
+Customer.delete_all()
+StockItem.delete_all()
 
 customer1 = Customer.new({"name" => "David Small"})
 customer1.save()

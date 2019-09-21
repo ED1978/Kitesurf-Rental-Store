@@ -21,4 +21,9 @@ class StockItem
     @id = results.first['id'].to_i()
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM stock_items"
+    SqlRunner.run(sql)
+  end
+
 end
