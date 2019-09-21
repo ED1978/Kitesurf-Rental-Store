@@ -1,1 +1,5 @@
-<p>Hello</p>
+<% for stock_item in @stock_items %>
+<h5>Name: <%=stock_item.name()%></h5>
+<p>Category: <%=stock_item.category()%></p>
+<p>Size: <%=stock_item.size()%></p>
+<% end %>
