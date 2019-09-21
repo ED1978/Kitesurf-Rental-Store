@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner.rb')
 
 
+
 class Rental
 
   attr_reader :id, :customer_id, :stock_item_id
@@ -20,6 +21,22 @@ class Rental
     @id = results.first['id'].to_i()
   end
 
+  def customer()
+    sql = "SELECT * FROM customers
+    WHERE id = $1"
+    values = [@customer_id]
+    results = SqlRunner.run( sql, values )
+    return Customer.new( results.first )
+  end
+
+  def stock_item()
+    sql = "SELECT * FROM stock_items
+    WHERE id = $1"
+    values = [@stock_item_id]
+    results = SqlRunner.run( sql, values )
+    return StockItem.new( results.first )
+  end
+
   def self.delete_all()
     sql = "DELETE FROM rentals"
     SqlRunner.run(sql)
@@ -30,5 +47,8 @@ class Rental
     rentals = SqlRunner.run(sql)
     return rentals.map {|rental| Rental.new(rental)}
   end
+
+
+
 
 end

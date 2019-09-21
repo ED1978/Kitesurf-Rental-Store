@@ -1,1 +1,9 @@
-<p>hello</p>
+<a href="/rentals/new">New Rental</a>
+
+<% for rental in @rentals%>
+<p>Rental Number: <%= rental.id() %></p>
+<p>Customer: <%= rental.customer.name() %></p>
+<p>Equipment: <%= rental.stock_item.name() %></p>
+
+  <hr />
+<% end %>

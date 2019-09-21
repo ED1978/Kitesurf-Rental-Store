@@ -18,6 +18,8 @@ class Customer
     @id = results.first()['id'].to_i()
   end
 
+
+
   def delete()
     sql = "DELETE FROM customers WHERE id = $1"
     values = [@id]
@@ -32,6 +34,8 @@ class Customer
     values = [@name, @id]
     SqlRunner.run(sql, values)
   end
+
+
 
   def self.delete_all()
     sql = "DELETE FROM customers"
@@ -49,6 +53,11 @@ class Customer
     values = [id]
     customer = SqlRunner.run(sql, values)
     result = Customer.new(customer.first)
+    return result
+  end
+
+  def self.map_items(customer_data)
+    result = customer_data.map { |customer| Customer.new( customer ) }
     return result
   end
 
