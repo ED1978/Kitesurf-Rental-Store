@@ -18,3 +18,12 @@ post '/customers' do
   customer.save()
   erb(:"customers/add_success")
 end
+
+get '/customers/:id/edit' do
+  @customer = Customer.find(params[:id])
+  erb(:"customers/edit")
+end
+
+post '/customers/:id' do
+  Customer.new(params.update)
+end
