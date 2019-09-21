@@ -29,7 +29,8 @@ post 'customers/:id' do
   erb(:"customers/update_success")
 end
 
-
-post '/customers/:id' do
-  Customer.new(params.update)
+post '/customers/:id/delete' do
+  @customer = Customer.find(params[:id])
+  @customer.delete()
+  redirect to '/customers'
 end
