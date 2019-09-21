@@ -11,3 +11,9 @@ end
 get '/stock_items/new' do
   erb(:"stock_items/new")
 end
+
+post '/stock_items' do
+  stock_item = StockItem.new(params)
+  stock_item.save()
+  redirect to '/stock_items'
+end
