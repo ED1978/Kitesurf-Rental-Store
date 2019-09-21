@@ -1,6 +1,5 @@
 require_relative('../db/sql_runner.rb')
 
-
 class StockItem
 
   attr_reader :id, :name, :category, :size
@@ -24,6 +23,12 @@ class StockItem
   def self.delete_all()
     sql = "DELETE FROM stock_items"
     SqlRunner.run(sql)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM stock_items"
+    stock_items = SqlRunner.run(sql)
+    return stock_items.map {|stock_item| StockItem.new(stock_item)}
   end
 
 end
