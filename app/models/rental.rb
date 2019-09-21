@@ -25,4 +25,10 @@ class Rental
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM rentals"
+    rentals = SqlRunner.run(sql)
+    return rentals.map {|rental| Rental.new(rental)}
+  end
+
 end
