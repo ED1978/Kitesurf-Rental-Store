@@ -25,8 +25,8 @@ get '/customers/:id/edit' do
   erb(:"customers/edit")
 end
 
-post 'customers/:id' do
-  customer = Customer.find(params[:id])
+post '/customers/:id/edit' do
+  customer = Customer.new(params)
   customer.update()
   erb(:"customers/update_success")
 end

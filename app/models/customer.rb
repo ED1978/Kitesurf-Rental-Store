@@ -26,7 +26,7 @@ class Customer
 
   def update()
     sql = "UPDATE customers
-    SET (name)
+    SET name
     = ($1)
     WHERE id = $2"
     values = [@name, @id]
