@@ -7,13 +7,15 @@ class Customer
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @address = options['address']
+    @dob = options['dob']
   end
 
   def save()
-    sql = "INSERT INTO customers (name)
-    VALUES ($1)
+    sql = "INSERT INTO customers (name, address, dob)
+    VALUES ($1, $2, $3)
     RETURNING id"
-    values = [@name]
+    values = [@name, @address, @dob]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i()
   end
@@ -26,10 +28,10 @@ class Customer
 
   def update()
     sql = "UPDATE customers
-    SET name
-    = ($1)
-    WHERE id = $2"
-    values = [@name, @id]
+    SET (name, address, dob)
+    = ($1, $2, $3)
+    WHERE id = $4"
+    values = [@name, @address, @dob, @id]
     SqlRunner.run(sql, values)
   end
 
