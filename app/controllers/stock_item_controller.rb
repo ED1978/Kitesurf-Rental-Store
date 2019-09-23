@@ -6,6 +6,7 @@ also_reload('../models/*')
 
 get '/stock_items' do
   @stock_items = StockItem.all()
+  @rentals = Rental.all()
   erb(:"stock_items/index")
 end
 

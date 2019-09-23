@@ -5,6 +5,7 @@ require_relative('../models/customer.rb')
 also_reload('../models/*')
 
 get '/customers' do
+  @rentals = Rental.all
   @customers = Customer.all
   erb(:"customers/index")
 end
@@ -25,7 +26,8 @@ get '/customers/:id/edit' do
 end
 
 post 'customers/:id' do
-  Customer.new(params).update
+  customer = Customer.find(params[:id])
+  customer.update()
   erb(:"customers/update_success")
 end
 

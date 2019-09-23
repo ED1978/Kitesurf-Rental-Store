@@ -14,7 +14,7 @@
   Select Equipment:
     <select name="stock_item_id">
       <% for stock_item in @stock_items %>
-      <option value="<%= stock_item.id %>"><%= stock_item.name %></option>
+      <option value="<%= stock_item.id %>"><%= stock_item.name %> <%=stock_item.size%></option>
       <% end %>
     </select>
   </label>
