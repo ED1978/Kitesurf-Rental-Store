@@ -4,7 +4,9 @@ DROP TABLE stock_items;
 
 CREATE TABLE customers(
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  address VARCHAR(255),
+  dob VARCHAR(255)
 );
 
 CREATE TABLE stock_items(
