@@ -1,7 +1,5 @@
 require_relative('../db/sql_runner.rb')
 
-
-
 class Rental
 
   attr_reader :id, :customer_id, :stock_item_id

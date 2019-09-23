@@ -2,15 +2,15 @@
 
 <form action="/rentals" method="post">
   <label>
-  Select a Cos:
-    <select name="zombie_id">
-      <% @customers.each do |customer| %>
+  Select a Customer:
+    <select name="customer_id">
+      <% for customer in @customers %>
       <option value="<%= customer.id %>"><%= customer.name %></option>
-      <% end%>
+      <% end %>
     </select>
   </label>
 
 
 
-  <input  type='submit' value="Start Rental">
+  <input  type='submit' value="Open Rental">
 </form>

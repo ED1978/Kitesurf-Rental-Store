@@ -1,6 +1,9 @@
+require('pry-byebug')
+
 require_relative("../models/customer.rb")
 require_relative("../models/stock_item.rb")
 require_relative("../models/rental.rb")
+
 
 Rental.delete_all()
 Customer.delete_all()
@@ -107,3 +110,5 @@ rental4 = Rental.new({
         "stock_item_id" => stock7.id
         })
 rental4.save()
+binding.pry
+nil

@@ -10,6 +10,7 @@ get '/rentals' do
 end
 
 get '/rentals/new' do
+  @customers = Customer.all
   erb(:"rentals/new")
 end
 
