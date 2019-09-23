@@ -11,7 +11,14 @@ end
 
 get '/rentals/new' do
   @customers = Customer.all
+  @stock_items = StockItem.all
   erb(:"rentals/new")
+end
+
+post '/rentals' do
+  rental = Rental.new(params)
+  rental.save()
+  erb(:"rentals/create_success")
 end
 
 post '/rentals/:id/delete' do

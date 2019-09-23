@@ -10,6 +10,15 @@
     </select>
   </label>
 
+  <label>
+  Select Equipment:
+    <select name="stock_item_id">
+      <% for stock_item in @stock_items %>
+      <option value="<%= stock_item.id %>"><%= stock_item.name %></option>
+      <% end %>
+    </select>
+  </label>
+
 
 
   <input  type='submit' value="Open Rental">
