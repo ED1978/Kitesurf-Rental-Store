@@ -8,13 +8,22 @@
 </form>
 <br>
 
+<% rented = false %>
+
 <% for rental in @rentals %>
-<% rental.customer_id == customer.id %>
+
+  <% if rental.customer_id == customer.id %>
+    <% rented = true %>
+  <% end %>
+<% end %>
+
+<% if rented == false %>
 <form method="post" action="/customers/<%= customer.id %>/delete">
   <input type="submit" value="Delete"/>
 </form>
 <% end %>
-<% end %>
+
+
 
   <hr />
 <% end %>
