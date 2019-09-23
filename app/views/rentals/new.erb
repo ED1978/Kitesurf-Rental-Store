@@ -1,1 +1,16 @@
-<p>hello</p>
+<h1>New Rental</h1>
+
+<form action="/rentals" method="post">
+  <label>
+  Select a Cos:
+    <select name="zombie_id">
+      <% @customers.each do |customer| %>
+      <option value="<%= customer.id %>"><%= customer.name %></option>
+      <% end%>
+    </select>
+  </label>
+
+
+
+  <input  type='submit' value="Start Rental">
+</form>

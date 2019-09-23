@@ -4,6 +4,9 @@
 <p>Rental Number: <%= rental.id() %></p>
 <p>Customer: <%= rental.customer.name() %></p>
 <p>Equipment: <%= rental.stock_item.name() %> <%= rental.stock_item.size %></p>
+<form method="post" action="/rentals/<%= rental.id %>/delete">
+  <input type="submit" value="Close Rental"/>
+</form>
 
   <hr />
 <% end %>

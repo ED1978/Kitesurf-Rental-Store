@@ -21,6 +21,12 @@ class Rental
     @id = results.first['id'].to_i()
   end
 
+  def delete()
+    sql = "DELETE FROM rentals WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def customer()
     sql = "SELECT * FROM customers
     WHERE id = $1"
@@ -48,6 +54,18 @@ class Rental
     return rentals.map {|rental| Rental.new(rental)}
   end
 
+  def self.map_items(rental_data)
+    result = rental_data.map { |rental| Rental.new( rental ) }
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM rentals WHERE id = $1"
+    values = [id]
+    rental = SqlRunner.run(sql, values)
+    result = Rental.new(rental.first)
+    return result
+  end
 
 
 

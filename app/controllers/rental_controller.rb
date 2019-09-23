@@ -12,3 +12,9 @@ end
 get '/rentals/new' do
   erb(:"rentals/new")
 end
+
+post '/rentals/:id/delete' do
+  @rental = Rental.find(params[:id])
+  @rental.delete()
+  redirect to '/rentals'
+end
