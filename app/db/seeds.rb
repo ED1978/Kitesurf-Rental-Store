@@ -9,16 +9,28 @@ Rental.delete_all()
 Customer.delete_all()
 StockItem.delete_all()
 
-customer1 = Customer.new({"name" => "David Small"})
+customer1 = Customer.new({
+  "name" => "David Small",
+  "address" => "29 Smith Street, Largs",
+  "dob" => "12/09/98" })
 customer1.save()
 
-customer2 = Customer.new({"name" => "Mike Sweetmore"})
+customer2 = Customer.new({
+  "name" => "Mike Sweetmore",
+  "address" => "1 Hay Place, Irvine",
+  "dob" => "19/11/89"})
 customer2.save()
 
-customer3 = Customer.new({"name" => "Dudley Hayden"})
+customer3 = Customer.new({
+  "name" => "Dudley Hayden",
+  "address" => "88 Limerick Road, Dublin",
+  "dob" => "12/07/29"})
 customer3.save()
 
-customer4 = Customer.new({"name" => "Kevin Sutherland"})
+customer4 = Customer.new({
+  "name" => "Kevin Sutherland",
+  "address" => "3 Marina Quay, Lossiemouth",
+  "dob" => "01/01/01"})
 customer4.save()
 
 
