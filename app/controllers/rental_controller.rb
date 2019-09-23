@@ -11,6 +11,7 @@ get '/rentals' do
 end
 
 get '/rentals/new' do
+  @rentals = Rental.all
   @customers = Customer.all
   @stock_items = StockItem.all
   erb(:"rentals/new")

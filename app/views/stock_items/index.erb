@@ -8,7 +8,6 @@
   <% rented = false %>
 
   <% for rental in @rentals %>
-
     <% if rental.stock_item_id == item.id %>
       <% rented = true %>
     <% end %>
