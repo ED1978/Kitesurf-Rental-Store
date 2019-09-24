@@ -1,4 +1,5 @@
-<form action="/customers/<%=@customer.id%>/edit" method="post">
+<h1>Update Customer Details</h1>
+<form class="form" action="/customers/<%=@customer.id%>/edit" method="post">
   <label for="name">Name:</label>
   <input type="text" name="name" id="name" value ="<%= @customer.name %>">
   <br>
