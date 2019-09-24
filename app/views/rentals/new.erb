@@ -1,5 +1,4 @@
 <h1>New Rental</h1>
-
 <form class="form" action="/rentals" method="post">
   <label>
   Select a Customer:
@@ -14,27 +13,20 @@
   <label>
   Select Equipment:
     <select name="stock_item_id">
-
       <% for stock_item in @stock_items %>
         <% rented = false %>
-
         <% for rental in @rentals %>
           <% if rental.stock_item_id == stock_item.id %>
             <% rented = true %>
           <% end %>
         <% end %>
-
         <% if rented == false %>
           <option value="<%= stock_item.id %>"><%= stock_item.name %> <%=stock_item.size%></option>
         <% end %>
-
       <% end %>
-
     </select>
   </label>
-
- <br>
- <br>
-
+  <br>
+  <br>
   <input  type='submit' value="Open Rental">
 </form>

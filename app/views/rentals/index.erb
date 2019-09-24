@@ -1,15 +1,13 @@
 <h1>Live Rentals</h1>
 <div class="flex-container">
   <% @rentals.each do |rental| %>
-  <div class="card">
-
-
-    <p>Rental Number: <%= rental.id() %></p>
-    <p>Customer: <%= rental.customer.name() %></p>
-    <p>Equipment: <%= rental.stock_item.name() %> <%= rental.stock_item.size %></p>
-    <form class="card-button" method="post" action="/rentals/<%= rental.id %>/delete">
-      <input type="submit" value="Close Rental"/>
-    </form>
+    <div class="card">
+      <p>Rental Number: <%= rental.id() %></p>
+      <p>Customer: <%= rental.customer.name() %></p>
+      <p>Equipment: <%= rental.stock_item.name() %> <%= rental.stock_item.size %></p>
+      <form class="card-button" method="post" action="/rentals/<%= rental.id %>/delete">
+        <input type="submit" value="Close Rental"/>
+      </form>
     </div>
   <% end %>
 </div>

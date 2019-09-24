@@ -4,7 +4,6 @@ require_relative("../models/customer.rb")
 require_relative("../models/stock_item.rb")
 require_relative("../models/rental.rb")
 
-
 Rental.delete_all()
 Customer.delete_all()
 StockItem.delete_all()
@@ -32,7 +31,6 @@ customer4 = Customer.new({
   "address" => "3 Marina Quay, Lossiemouth",
   "dob" => "01/01/01"})
 customer4.save()
-
 
 stock1 = StockItem.new({
   "name" => "Core GTS 5",
@@ -109,18 +107,17 @@ rental2 = Rental.new({
     })
 rental2.save()
 
-
 rental3 = Rental.new({
       "customer_id" => customer1.id,
       "stock_item_id" => stock8.id
       })
 rental3.save()
 
-
 rental4 = Rental.new({
         "customer_id" => customer4.id,
         "stock_item_id" => stock7.id
         })
 rental4.save()
+
 binding.pry
 nil

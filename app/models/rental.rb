@@ -65,6 +65,4 @@ class Rental
     return result
   end
 
-
-
 end
