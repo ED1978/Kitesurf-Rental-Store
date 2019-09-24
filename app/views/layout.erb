@@ -3,16 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>Kiteshop</title>
+    <link rel="stylesheet" type="text/css" href="/styles/layout.css">
   </head>
   <body>
+    <header>
+      <h1>Kitesurf-Strathclyde.scot</h1>
+    </header>
     <nav>
       <ul>
         <li><a href="/home">Home</a></li>
+        <br>
+        <br>
+        <br>
         <li><a href="/stock_items">Stock</a></li>
+        <br>
+        <br>
+        <br>
         <li><a href="/customers">Customers</a></li>
+        <br>
+        <br>
+        <br>
         <li><a href="/rentals">Rentals</a></li>
       </ul>
     </nav>
-    <%= yield %>
+    <main>
+      <%= yield %>
+      </main>
   </body>
 </html>

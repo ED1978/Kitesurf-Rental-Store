@@ -1,15 +1,17 @@
-<a href="/rentals/new">New Rental</a>
+<div class="flex-container">
+  <% @rentals.each do |rental| %>
+  <div class="card">
 
-<% @rentals.each do |rental| %>
 
-<p>Rental Number: <%= rental.id() %></p>
-<p>Customer: <%= rental.customer.name() %></p>
-
-<p>Equipment: <%= rental.stock_item.name() %> <%= rental.stock_item.size %></p>
-
-<form method="post" action="/rentals/<%= rental.id %>/delete">
-  <input type="submit" value="Close Rental"/>
+    <p>Rental Number: <%= rental.id() %></p>
+    <p>Customer: <%= rental.customer.name() %></p>
+    <p>Equipment: <%= rental.stock_item.name() %> <%= rental.stock_item.size %></p>
+    <form method="post" action="/rentals/<%= rental.id %>/delete">
+      <input type="submit" value="Close Rental"/>
+    </form>
+    </div>
+  <% end %>
+</div>
+<form method="get" action="/rentals/new">
+  <input type="submit" value="New Rental"/>
 </form>
-
-  <hr />
-<% end %>

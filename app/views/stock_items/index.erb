@@ -1,23 +1,25 @@
-<a href="/stock_items/new">Add Stock</a>
+<div class="flex-container">
+
 
 <% @stock_items.each do |item| %>
+<div class="card">
   <p>Name: <%= item.name() %></p>
   <p>Category: <%= item.category() %></p>
   <p>Size: <%= item.size() %></p>
-
   <% rented = false %>
-
   <% for rental in @rentals %>
     <% if rental.stock_item_id == item.id %>
       <% rented = true %>
     <% end %>
   <% end %>
-
   <% if rented == false %>
     <form method="post" action="/stock_items/<%= item.id %>/delete">
     <input type="submit" value="Delete item"/>
     </form>
   <% end %>
-
-  <hr />
+  </div>
 <% end %>
+</div>
+<form method="get" action="/stock_items/new">
+  <input type="submit" value="Add Stock"/>
+</form>
