@@ -1,3 +1,4 @@
+<h1>Current Stock</h1>
 <div class="flex-container">
 
 
@@ -13,13 +14,13 @@
     <% end %>
   <% end %>
   <% if rented == false %>
-    <form method="post" action="/stock_items/<%= item.id %>/delete">
+    <form class="card-button" method="post" action="/stock_items/<%= item.id %>/delete">
     <input type="submit" value="Delete item"/>
     </form>
   <% end %>
   </div>
 <% end %>
 </div>
-<form method="get" action="/stock_items/new">
+<form class="new" method="get" action="/stock_items/new">
   <input type="submit" value="Add Stock"/>
 </form>
