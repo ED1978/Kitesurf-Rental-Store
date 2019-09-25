@@ -45,6 +45,5 @@ class StockItem
     return result
   end
 
-  
 
 end
