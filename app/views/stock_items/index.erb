@@ -15,6 +15,8 @@
         <form class="card-button" method="post" action="/stock_items/<%= item.id %>/delete">
           <input type="submit" value="Delete item"/>
         </form>
+      <% else %>
+        <p class="hire">On Hire</p>
       <% end %>
       </div>
   <% end %>

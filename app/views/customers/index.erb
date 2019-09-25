@@ -5,18 +5,21 @@
     <p>Name: <%= customer.name() %></p>
     <p>Address: <%= customer.address %></p>
     <p>D.O.B: <%= customer.dob %></p>
-    <form class="card-button" method="get" action="/customers/<%= customer.id %>/edit">
-      <input type="submit" value="Update"/>
-    </form>
     <% rented = false %>
+    <% customer_rentals = 0 %>
     <% for rental in @rentals %>
       <% if rental.customer_id == customer.id %>
         <% rented = true %>
+        <% customer_rentals += 1 %>
       <% end %>
     <% end %>
+    <p>Items rented: <%= customer_rentals.to_s %></p>
+    <form class="card-button" method="get" action="/customers/<%= customer.id %>/edit">
+      <input type="submit" value="Update"/>
+    </form>
     <% if rented == false %>
       <form class="card-button" method="post" action="/customers/<%= customer.id %>/delete">
-        <input type="submit" value="Delete"/>
+        <input type="submit" value="Remove"/>
       </form>
     <% end %>
     </div>
