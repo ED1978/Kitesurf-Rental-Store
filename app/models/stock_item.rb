@@ -45,9 +45,6 @@ class StockItem
     return result
   end
 
-  def self.map_items(stock_item_data)
-    result = stock_item_data.map { |stock_item| Stock_item.new( stock_item ) }
-    return result
-  end
   
+
 end
